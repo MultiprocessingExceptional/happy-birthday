@@ -685,8 +685,7 @@
         </p>
         <p class="ln">Patience: <b>0%</b></p>
         <p class="ln">Appetite: <b>100%</b></p>
-        <p class="ln">Verdict: <b>still my favourite sister.</b></p>
-        <p class="ln"><i>This was the wrong card, sorry. 😅</i></p>
+        <p class="ln">Verdict: <b>still my sister.</b></p>
       </div>
       <div class="card rv" id="emo">
         <p class="serif" style="font-size: 1.3rem">
@@ -823,9 +822,9 @@
           "I understand I am getting one more year older and zero more patient.",
         ],
         letter: [
-          "Dear [Her name],",
-          "[EDIT ME] Write like you talk on the phone. One inside joke, one real thing.",
-          "[EDIT ME] Say what you miss about her being far away, and what you're proud of.",
+          "Dear Sister ❤️,",
+          "Even though we're miles apart, you'll always be close to my heart. I wish I could be there to celebrate with you, annoy you, and make you smile in person. ",
+          "Keep chasing your dreams, take care of yourself 🥹❤️.",
           "— Your annoying brother",
         ],
         // Put files in /images and set src:"images/one.jpg". Empty src = placeholder.
@@ -840,42 +839,46 @@
         quiz: [
           // pts:1 = answer the brother wants
           {
-            q: "Who is more mischievous?",
+            q: "Who is more mischievous (Playfully troublesome )?",
             a: [
-              { t: "Me", p: 0, r: "Wrong. We both know it's him. 😇" },
-              { t: "My brother", p: 1, r: "Correct. He has never denied it." },
+              { t: "Me", p: 0, r: "hmm.. I knew 😇" },
+              { t: "My brother", p: 1, r: "Aysheri" },
             ],
           },
           {
             q: "Who gets angry first?",
             a: [
-              { t: "Me", p: 0, r: "Brave of you to admit that." },
-              { t: "Him", p: 1, r: "Yes, and he's over it in 5 minutes." },
+              {
+                t: "Me",
+                p: 1,
+                r: "Itna gussa mat rakh, thanda dimaag rakh apna",
+              },
+              { t: "Him", p: 0, r: "jo ki 5 minute rehta hai" },
             ],
           },
           {
             q: "Who is the favourite child?",
             a: [
-              { t: "Me", p: 0, r: "Show proof. In writing." },
-              { t: "Him", p: 1, r: "Finally, some honesty." },
+              { t: "Me", p: 1, r: "Ha bani reh unka favourite." },
+              { t: "Him", p: 0, r: "Chalo maana to shi at last." },
             ],
           },
           {
             q: "Who steals the food?",
             a: [
               {
-                t: "Him, always",
+                t: "Him",
                 p: 1,
-                r: "Guilty. The last piece called my name.",
+                r: "Ha seedha seedha dene me to tujhe dikkat hai to steal hi krna padta hai",
               },
-              { t: "Me", p: 0, r: "Sure. Keep telling yourself that." },
+              { t: "Me", p: 0, r: "steal krke kha khake moti ho gyi hai" },
             ],
           },
           {
             q: "Who annoys the other more?",
             a: [
-              { t: "Me", p: 0, r: "You? Never. (Mostly.)" },
-              { t: "Him", p: 1, r: "Professionally. It's a gift." },
+              { t: "Me", p: 0, r: "Sahi kaha your're the annoying one" },
+              { t: "Him", p: 1, r: "Talent" },
             ],
           },
         ],
@@ -888,12 +891,12 @@
           {
             m: 3,
             t: "Pretty close! 😄",
-            s: "You know me well and still pick up my calls. That's love.",
+            s: "You know me well and still call me.",
           },
           {
             m: 5,
             t: "Certified Sister 🏆",
-            s: "Perfect score. You know all my flaws and love me anyway.",
+            s: "Perfect score. You know all my flaws.",
           },
         ],
         pairs: ["🍫", "🧸", "🎂", "📞", "🩺", "🍕"],
@@ -1205,7 +1208,7 @@
         }
         m.textContent =
           v === capTexts()[cr]
-            ? "Hmm, eagle eyes 👀 Fine. Fresh code, try again."
+            ? "Aankhein khol ke dekh andhi 👀. Fresh code, try again."
             : cr === 0
               ? "Wrong! Look closer, some letters are small 🧐 Try again."
               : "Still wrong! There are special characters too 😤 Last chance…";
@@ -1244,7 +1247,7 @@
             $("#emo2").classList.remove("hide");
             confetti(60);
             unlock(3);
-          }, t + 3500),
+          }, t + 4000),
         );
       }
 
@@ -1295,7 +1298,7 @@
           $("#real").classList.remove("hide");
           confetti(80);
           hearts(30);
-        }, 20000);
+        }, 17000);
       }
 
       /* photos */
