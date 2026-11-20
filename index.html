@@ -822,19 +822,31 @@
           "I understand I am getting one more year older and zero more patient.",
         ],
         letter: [
-          "Dear Sister ❤️,",
+          "Dear Sister, ❤️",
           "Even though we're miles apart, you'll always be close to my heart. I wish I could be there to celebrate with you, annoy you, and make you smile in person. ",
           "Keep chasing your dreams, take care of yourself 🥹❤️.",
           "— Your annoying brother",
         ],
         // Put files in /images and set src:"images/one.jpg". Empty src = placeholder.
         photos: [
-          { src: "", cap: "[Caption 1] That time we…" },
-          { src: "", cap: "[Caption 2] Worst selfie" },
-          { src: "", cap: "[Caption 3] Childhood chaos" },
-          { src: "", cap: "[Caption 4] Festival day" },
-          { src: "", cap: "[Caption 5] Fav memory" },
-          { src: "", cap: "[Caption 6] Before you left" },
+          { src: "images/image 18.jpg", cap: "" },
+          { src: "images/image 17.jpg", cap: "" },
+          { src: "images/image 16.jpg", cap: "" },
+          { src: "images/image 15.jpg", cap: "" },
+          { src: "images/image 14.jpg", cap: "" },
+          { src: "images/image 13.jpg", cap: "" },
+          { src: "images/image 12.jpg", cap: "" },
+          { src: "images/image 11.jpg", cap: "" },
+          { src: "images/image 10.jpg", cap: "" },
+          { src: "images/image 9.jpg", cap: "" },
+          { src: "images/image 8.jpg", cap: "" },
+          { src: "images/image 7.jpg", cap: "" },
+          { src: "images/image 6.jpg", cap: "" },
+          { src: "images/image 5.jpg", cap: "" },
+          { src: "images/image 4.jpg", cap: "" },
+          { src: "images/image 3.jpg", cap: "" },
+          { src: "images/image 2.jpg", cap: "" },
+          { src: "images/image 1.jpg", cap: "" },
         ],
         quiz: [
           // pts:1 = answer the brother wants
@@ -908,7 +920,7 @@
         ntfy: "sijin-bday-x7q2k9", // your private ntfy topic name (see instructions). Leave as is to turn alerts off.
         amount: 1000,
         currency: "₹", // amount shown in the fake "gift received" animation (for show only)
-        music: "", // optional "music/song.mp3"; empty = built-in melody
+        music: "images/birthday.mp3",
       };
       /* ========== END ========== */
       const $ = (s) => document.querySelector(s),
@@ -1529,6 +1541,32 @@
         }
       };
       ping("🎉 She opened the link!");
+
+      /* background music: tries to autoplay; if the phone blocks it, starts on her first tap */
+      (function () {
+        const evs = ["click", "touchend", "keydown"];
+        const stop = () => evs.forEach((e) => removeEventListener(e, onFirst));
+        const asPlaying = () => {
+          pl = 1;
+          mu.textContent = "⏸";
+          mu.setAttribute("aria-pressed", "true");
+          mu.setAttribute("aria-label", "Pause music");
+          stop();
+        };
+        function onFirst(e) {
+          stop();
+          if (e.target.closest && e.target.closest("#mu")) return; // her own music-button tap handles itself
+          if (!pl) mu.click();
+        }
+        evs.forEach((e) => addEventListener(e, onFirst, { passive: true }));
+        if (C.music) {
+          au = new Audio(C.music);
+          au.loop = true;
+          au.play()
+            .then(asPlaying)
+            .catch(() => {});
+        }
+      })();
     </script>
   </body>
 </html>
